@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Register(회원가입)</title>
+	<style>
+		body 	{ height: 100%; background-color: #f3f1e9; }
+		label 	{ display: inline-block; width: 120px; }
+		input 	{ display: inline-block; width: 160px; }
+	</style>
+	<script>
+		function isSame() {
+			if (document.getElementById('pw').value !='' && document.getElementById('pwCheck').value) {
+				document.getElementById('same').innerHTML = '비밀번호 불일치';
+				document.getElementById('same').style.color = 'red';
+			}
+			else {
+				document.getElementById('same').innerHTML = '비밀번호 일치';
+				document.getElementById('same').style.color = 'blue';
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="" method="post">
+		<fieldset>
+			<legend>회원정보입력</legend>
+			<label for="name ">아이디</label>
+			<input type="text" name="name" id="text1" />
+			<button>중복검사</button><br/>
+			<label for="password1">패스워드</label>
+			<input type="password" name="password1" id="pw" onchange="isSame()" /><br/>
+			<label for="password2">패스워드 확인</label>
+			<input type="password" name="password2" id="pwCheck" onchange="isSame()"/>
+			<span id="same"></span><br/>
+			<label for="name">이름</label>
+			<input type="text" name="name" /><br/>
+			<label for="tel">휴대폰 번호</label>
+			<input type="tel" name="tel" /><br/>
+			<label for="email">이메일</label>
+			<input type="email" name="email" /><br/>
+			<label for="dob">생일</label>
+			<input type="date" name="dob" /><br/>
+			<label for="url">홈페이지</label>
+			<input type="url" name="url" /><br/>
+			<input type="radio" name="gender" value="Male">&nbsp;남성<br/>
+			<input type="radio" name="gender" value="Female">
+			여성<br/>
+		</fieldset>
+		<input type="submit" name="submit" value="제출" />
+		<input type="reset" name="reset" value="초기화" />
+	</form>
+	<a href="index.html">Back to Home</a>
+</body>
+</html>
